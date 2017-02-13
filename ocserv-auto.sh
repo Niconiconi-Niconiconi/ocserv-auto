@@ -521,7 +521,7 @@ function ConfigFirewall {
     fi
 }
 
-function I--nstall-http-parser {
+function Installhttpparser {
     if [[ $(rpm -q http-parser | grep -c "http-parser-2.0") = 0 ]]; then
         mkdir -p /tmp/http-parser-2.0 /opt/lib
         cd /tmp/http-parser-2.0
