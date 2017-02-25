@@ -20,12 +20,21 @@ ocserv的主用配置文件就是/etc/ocserv.conf，我们可以把通用的配�
 1 ocpasswd -c /etc/ocserv/ocpasswd usera
 
 2 ocpasswd -c /etc/ocserv/ocpasswd userb
+
 创建usera的配置文件(无后缀）
+
 nano etc/ocserv/config-per-user/usera
+
 把路由表放进这个文件。
+
 编辑/etc/ocserv.conf使用用户名登入，
+
 auth = "plain[passwd=/etc/ocserv/ocpasswd]"
+
 config-per-user = /etc/ocserv/config-per-user/
+
 config-per-group = /etc/ocserv/config-per-group/
+
 之后重启ocserv服务。现在使用usera登入VPN就是智能上网，而userb就是全局VPN。
+
 另外，用户配置支持 route，dns，限速，独立子网网段等参数，可以自行摸索。
