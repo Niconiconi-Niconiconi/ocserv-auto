@@ -14,17 +14,14 @@ Auto Install Ocserv Server for CentOS&RedHat 7
 
 
 AnyConnect VPN用户配置
-　　ocserv的主用配置文件就是/etc/ocserv.conf，我们可以把通用的配置放在这个里面。拿路由表举例，可以把这个文件里面的路由表全部#掉。比如usera需要智能上网，而userb不用，首先创建用户并设置密码
+ocserv的主用配置文件就是/etc/ocserv.conf，我们可以把通用的配置放在这个里面。拿路由表举例，可以把这个文件里面的路由表全部#掉。比如usera需要智能上网，而userb不用，首先创建用户并设置密码
 1 ocpasswd -c /etc/ocserv/ocpasswd usera
 2 ocpasswd -c /etc/ocserv/ocpasswd userb
 创建usera的配置文件(无后缀）
 nano etc/ocserv/config-per-user/usera
 把路由表放进这个文件。
 编辑/etc/ocserv.conf使用用户名登入，
-#auth = "plain[passwd=./sample.passwd]"
 auth = "plain[passwd=/etc/ocserv/ocpasswd]"
-#auth = "certificate"
-...
 config-per-user = /etc/ocserv/config-per-user/
 config-per-group = /etc/ocserv/config-per-group/
 之后重启ocserv服务。现在使用usera登入VPN就是智能上网，而userb就是全局VPN。
