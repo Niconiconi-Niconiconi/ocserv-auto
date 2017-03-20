@@ -38,3 +38,8 @@ config-per-group = /etc/ocserv/config-per-group/
 之后重启ocserv服务。现在使用usera登入VPN就是智能上网，而userb就是全局VPN。
 
 另外，用户配置支持 route，dns，限速，独立子网网段等参数，可以自行摸索。
+
+# Unset to enable bandwidth restrictions (in bytes/sec). The 
+# setting here is global, but can also be set per user or per group. 
+#rx-data-per-sec = 40000 
+#tx-data-per-sec = 40000
